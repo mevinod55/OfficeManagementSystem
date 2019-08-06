@@ -1,0 +1,46 @@
+{% extends 'master/base.html' %}
+{% block 'title' %}Task  {% endblock %}
+
+
+{% block 'content' %}
+    <div class="container">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Show Task Assign</div>
+                <div class="panel-body">
+                    <form method="post" action="#">
+                        {{form}}
+                        {% csrf_token %}
+                        <br/>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">Task</div>
+                    <div class="panel panel-body">
+                        <table class="table">
+                            <th>Name</th>
+                            <th>TaskName</th>
+                            <th>AssignDate</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                            {% for b in form1 %}
+                            <tr>
+                                <td>{{b.name}}</td>
+                                <td>{{b.taskname}}</td>
+                                <td>{{b.Assigndate}}</td>
+                                <td>{{b.dateline}}</td>
+                                <td><a href="{% url 'task_edit' b.id %}"> Edit</a>|<a href="#" onclick="delete_('{% url 'task_delete' b.id %}')"> Del</a> </td>
+                            </tr>
+                            {% endfor %}
+
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

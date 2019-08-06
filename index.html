@@ -1,0 +1,77 @@
+
+{% extends 'master/base.html' %}
+{% block 'title' %}Index{% endblock %}
+
+{% block 'content' %}
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">Attendance</div>
+                    <div class="panel panel-body">
+                        <table class="table">
+                            <th>Name</th>
+                            <th>Timein</th>
+                            <th>Timeout</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                            {% for a in form %}
+                            <tr>
+                                <td>{{a.name}}</td>
+                                <td>{{a.timein}}</td>
+                                <td>{{a.timeout}}</td>
+                                <td>{{a.date}}</td>
+                                <td><a href="{% url 'attn_edit' a.id %}"> Edit</a>|<a href="#" onclick="delete_('{% url 'attn_delete' a.id %}')"> Del</a> </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+            </div>
+             <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">Task</div>
+                    <div class="panel panel-body">
+                        <table class="table">
+                            <th>Name</th>
+                            <th>Taskkname</th>
+                            <th>Assigndate</th>
+                            <th>Dateline</th>
+                            <th>Action</th>
+                            {% for b in form1 %}
+                            <tr>
+                                <td>{{b.name}}</td>
+                                <td>{{b.taskname}}</td>
+                                <td>{{b.Assigndate}}</td>
+                                <td>{{b.dateline}}</td>
+                                <td><a href="#"> Edit</a> |<a href="#" onclick="delete_('{% url 'task_delete' b.id %}')"> Del</a> </td>
+                            </tr>
+                            {% endfor %}
+
+                        </table>
+                    </div>
+            </div>
+        </div>
+            <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">Record</div>
+                    <div class="panel panel-body">
+                        <table class="table">
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                             {% for c in form2 %}
+                            <tr>
+                                <td>{{c.name}}</td>
+                                <td>{{c.date}}</td>
+                                <td><a href="#">Edit</a> |<a href="#" onclick="delete_('{% url 'leave_delete' c.id %}')">Delete</a></td>
+                            </tr>
+                            {% endfor %}
+
+                        </table>
+                    </div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}
+

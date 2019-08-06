@@ -1,0 +1,45 @@
+{% extends 'master/base.html' %}
+{% block 'title' %}FeedBack  {% endblock %}
+
+
+{% block 'content' %}
+    <div class="container">
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Comment US</div>
+                <div class="panel-body">
+                    <form method="post" >
+                        {{form}}
+                       {% csrf_token %}
+                        <br/>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!--<div class="col-md-6">-->
+            <!--<div class="panel panel-primary">-->
+                <!--<div class="panel panel-heading">Attendance</div>-->
+                    <!--<div class="panel panel-body">-->
+                        <!--<table class="table">-->
+                            <!--<th>Name</th>-->
+                            <!--<th>Timein</th>-->
+                            <!--<th>Timeout</th>-->
+                            <!--<th>Date</th>-->
+                            <!--<th>Action</th>-->
+                            <!--{% for c in attend %}-->
+                            <!--<tr>-->
+                                <!--<td>{{c.name}}</td>-->
+                                <!--<td>{{c.timein}}</td>-->
+                                <!--<td>{{c.timeout}}</td>-->
+                                <!--<td>{{c.date}}</td>-->
+                                <!--<td><a href="{% url 'attn_edit' c.id %}"> Edit</a>|<a href="#" onclick="delete_('{% url 'attn_delete' c.id %}')"> Del</a> </td>-->
+                            <!--</tr>-->
+                            <!--{% endfor %}-->
+                        <!--</table>-->
+                    <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+{% endblock %}

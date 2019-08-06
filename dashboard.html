@@ -1,0 +1,23 @@
+
+{% extends 'master/base.html' %}
+{% block 'title' %}dashboard  {% endblock %}
+{% load staticfiles %}
+
+
+{% block 'content' %}
+<div class="container">
+ <div class= "col-md-4">
+            <img src="{% static 'img/attendance-biometric.png' %}" class="exp-img" height="200" width="200">
+            <a href="{% url 'attendance' %}" class = "exp-text"><h2>Attendance</h2></a>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'img/can-task.jpg' %}" class="exp-img" height="200" width="200">
+            <a href="{% url 'Task' %}" class = "exp-text"><h2>Task</h2></a>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'img/leave.jpg' %}" class="exp-img" height="200" width="200">
+            <a href="{% url 'LeaveRecord' %}" class = "exp-text"><h2>LeaveRecord</h2></a>
+        </div>
+</div> <br><br/><br/><br/><br/><br/><br/><br/>
+{% endblock %}
+

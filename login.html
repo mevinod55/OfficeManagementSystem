@@ -1,0 +1,34 @@
+{% extends 'master/base.html' %}
+{% block 'title' %}Login  {% endblock %}
+
+
+{% block 'content' %}
+<div class="row">
+    <div class="col-md-6 col-md-offset-4"><div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Signin</h3>
+          </div>
+      <div class="panel-body">
+          {% if errmsg %}
+          <div class="alert alert-danger">{{errmsg}}</div>
+          {% endif %}
+        <form method="post" action="#">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Username</span>
+              <input type="text" class="form-control" name="username" aria-describedby="sizing-addon1" placeholder="username">
+            </div>
+            <br/>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="password">password</span>
+              <input type="password" class="form-control" name="password" aria-describedby="sizing-addon1" placeholder="password">
+            </div>
+            {% csrf_token %}
+            <br/>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+      </div>
+      </div>
+    </div>
+
+{% endblock %}

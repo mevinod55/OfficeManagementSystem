@@ -1,0 +1,54 @@
+{% extends 'master/base.html' %}
+{% block 'content'%}
+<div class="container">
+
+    <div class="col-md-6">
+        <h3 style="color:#00FF00">In traditional concepts, office is known as the place where all the official work are done or performed. it is also known as the place for doing paper work. Office means a central place where the office personnel perform some sort of paper work. According to J.C Denyer,' Anoffice is the place where clerical function are carried on.' The clerical work may be handling of incoming and outgoing mail , writingand typing letters , report , receipt and payment made by cash or cheques , filing documents etc.
+
+But now in the era of information technology,office doesn't refer to a place but it is known as set of function for doing office work or activities. It is known as the set of clerical function which are to be carried out.It also helps us to do different activities such as collecting the data ,recording them,analysing them,presenting them in systematic n scientific way, etc. It is the brain of an organization .
+
+
+
+
+    </div>
+    <div class="col-md-6">
+        <h3 style="color:blue">It can be also known as informational desk , where all types of information is collected,prcessed , stored , and distributed. All the function of management like planning, organizing, directing, or controlling are controlled by office which involves paper work. According to Edward Roche,'office exist anywhere, where certain kinds of work are performed.'
+
+In conclusion we can say that office does not refers to particular place only but more important is office work. Office may be defined as the function of receiving , recording, processing and supplying the infoemation to manager for planning and control purposes.</h3>
+</h3>
+    </div>
+</div>
+<!--<div class="col-md-4">-->
+            <!--<a href="{% url 'Comment' %}" class = "exp-text"><h2>FeedBack</h2></a>-->
+        <!--</div>-->
+ <div class="container">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">FeedBack</div>
+                <div class="panel-body">
+                    <form method="post" >
+                        {{form}}
+                       {% csrf_token %}
+                        <br/>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+             <table class="table">
+                 <th>Email</th>
+                 <th>Comment</th>
+                 {% for i in  form1 %}
+                     <tr>
+                         <td>{{i.email}}</td>
+                         <td>{{i.comment}}</td>
+
+                     </tr>
+                 {% endfor %}
+
+             </table>
+        </div>
+    </div>
+{% endblock %}
