@@ -1,2 +1,2 @@
 # OfficeManagementSystem
-Using django
+#Developer Vinod DangKathmandu HardtCollege Bafal,kalanki Kathmandu Nepal.
